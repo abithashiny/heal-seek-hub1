@@ -186,14 +186,15 @@ const FindHospital = () => {
                   Call Emergency: +91 40 1234 5678
                 </Button>
                 <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="text-lg border-white text-white hover:bg-white hover:text-primary"
-                  onClick={() => window.open(googleMapsLink, '_blank')}
-                >
-                  <Navigation className="mr-2 h-5 w-5" />
-                  Get Quick Directions
-                </Button>
+                variant="outline" 
+                size="lg" 
+                className="text-lg border-black text-black hover:bg-black hover:text-white"
+                onClick={() => window.open(googleMapsLink, '_blank')}
+              >
+                <Navigation className="mr-2 h-5 w-5" />
+                Get Quick Directions
+              </Button>
+
               </div>
             </CardContent>
           </Card>

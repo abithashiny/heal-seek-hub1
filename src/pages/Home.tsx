@@ -16,27 +16,34 @@ import {
 } from "lucide-react";
 import hospitalExterior from "@/assets/hospital-exterior.jpg";
 import gynecologyImg from "@/assets/gynecology.jpg";
-import orthopedicsImg from "@/assets/orthopedics.jpg";
-import pediatricsImg from "@/assets/pediatrics.jpg";
+import maternitycareImg from "@/assets/maternitycare.jpg";
+import laser_surgeryImg from "@/assets/laser_surgery.jpg";
+import Laparoscopy_SurgeryImg from "@/assets/Laparoscopy_Surgery.jpg";
 
 const Home = () => {
   const specialties = [
     {
-      name: "Gynecology",
-      description: "Expert care for women's health, from pregnancy to menopause",
+      name: "Fertility Treatments",
+      description: "Advanced fertility solutions and reproductive healthcare for couples seeking to start a family",
       image: gynecologyImg,
-      link: "/specialties#gynecology"
+      link: "/specialties"
     },
     {
-      name: "Orthopedics", 
-      description: "Advanced treatments for bones, joints, and spine",
-      image: orthopedicsImg,
+      name: "Maternity Care", 
+      description: "Comprehensive pregnancy care from conception to delivery with expert maternal-fetal medicine",
+      image: maternitycareImg,
       link: "/specialties#orthopedics"
     },
     {
-      name: "Pediatrics",
-      description: "Comprehensive care for children's health",
-      image: pediatricsImg,
+      name: "Laser Surgery",
+      description: "Minimally invasive laser procedures for precise and effective surgical treatments",
+      image: laser_surgeryImg,
+      link: "/specialties#pediatrics"
+    },
+    {
+      name: "Laparoscopy Surgery",
+      description: "Advanced minimally invasive surgical techniques for faster recovery and better outcomes",
+      image: Laparoscopy_SurgeryImg,
       link: "/specialties#pediatrics"
     }
   ];
@@ -85,23 +92,34 @@ const Home = () => {
               Delivering World-Class Healthcare in Hyderabad, Telangana
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/book-appointment">
-                <Button size="lg" variant="secondary" className="text-lg px-8 py-3">
-                  Book Appointment
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link to="/find-hospital">
-                <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-white text-white hover:bg-white hover:text-primary">
-                  Find Hospital
-                  <MapPin className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-white text-white hover:bg-white hover:text-primary">
-                <Phone className="mr-2 h-5 w-5" />
-                Call Emergency
+            <Link to="/book-appointment">
+              <Button size="lg" variant="secondary" className="text-lg px-8 py-3">
+                Book Appointment
+                <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
-            </div>
+            </Link>
+
+            <Link to="/find-hospital">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-lg px-8 py-3 border-black text-black hover:bg-black hover:text-white"
+              >
+                Find Hospital
+                <MapPin className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-lg px-8 py-3 border-black text-black hover:bg-black hover:text-white"
+            >
+              <Phone className="mr-2 h-5 w-5" />
+              Call Emergency
+            </Button>
+          </div>
+
           </div>
         </div>
       </section>
@@ -165,43 +183,99 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-16 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* About Section */}
+<section className="py-16 bg-muted/50">
+  <div className="container mx-auto px-4">
+    <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 className="text-4xl font-bold mb-6">About Sravanthi Hospital</h2>
+        <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+          Since 2010, Sravanthi Hospital has been a beacon of healthcare excellence in Hyderabad, 
+          offering advanced treatments with compassion. Our commitment to patient care and medical 
+          innovation has made us a trusted healthcare partner for thousands of families.
+        </p>
+        
+        {/* Additional content to balance the layout */}
+        <p className="text-base text-muted-foreground mb-6 leading-relaxed">
+          With over 15 years of dedicated service, we have established ourselves as a leading 
+          multi-specialty hospital equipped with state-of-the-art infrastructure and a team of 
+          highly qualified medical professionals. Our patient-centric approach ensures that every 
+          individual receives personalized care tailored to their specific needs.
+        </p>
+
+        <div className="mb-6">
+          <h3 className="text-xl font-semibold mb-3">Our Mission</h3>
+          <p className="text-muted-foreground">
+            To provide world-class healthcare services that are accessible, affordable, and delivered 
+            with the highest standards of medical excellence and human compassion.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+          <div className="flex items-center space-x-3">
+            <Shield className="h-8 w-8 text-primary flex-shrink-0" />
             <div>
-              <h2 className="text-4xl font-bold mb-6">About Sravanthi Hospital</h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Since 2010, Sravanthi Hospital has been a beacon of healthcare excellence in Hyderabad, 
-                offering advanced treatments with compassion. Our commitment to patient care and medical 
-                innovation has made us a trusted healthcare partner for thousands of families.
-              </p>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="flex items-center space-x-3">
-                  <Shield className="h-8 w-8 text-primary" />
-                  <div>
-                    <div className="font-semibold">Advanced Technology</div>
-                    <div className="text-sm text-muted-foreground">Latest medical equipment</div>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Clock className="h-8 w-8 text-primary" />
-                  <div>
-                    <div className="font-semibold">24/7 Emergency</div>
-                    <div className="text-sm text-muted-foreground">Round the clock care</div>
-                  </div>
-                </div>
-              </div>
+              <div className="font-semibold">Advanced Technology</div>
+              <div className="text-sm text-muted-foreground">Latest medical equipment</div>
             </div>
-            <div className="relative">
-              <img 
-                src={hospitalExterior} 
-                alt="Hospital Interior"
-                className="rounded-lg shadow-lg w-full"
-              />
+          </div>
+          <div className="flex items-center space-x-3">
+            <Clock className="h-8 w-8 text-primary flex-shrink-0" />
+            <div>
+              <div className="font-semibold">24/7 Emergency</div>
+              <div className="text-sm text-muted-foreground">Round the clock care</div>
+            </div>
+          </div>
+          <div className="flex items-center space-x-3">
+            <Users className="h-8 w-8 text-primary flex-shrink-0" />
+            <div>
+              <div className="font-semibold">Expert Doctors</div>
+              <div className="text-sm text-muted-foreground">Qualified specialists</div>
+            </div>
+          </div>
+          <div className="flex items-center space-x-3">
+            <Heart className="h-8 w-8 text-primary flex-shrink-0" />
+            <div>
+              <div className="font-semibold">Compassionate Care</div>
+              <div className="text-sm text-muted-foreground">Patient-first approach</div>
             </div>
           </div>
         </div>
-      </section>
+
+        {/* Stats or achievements */}
+        <div className="border-t pt-6">
+          <div className="grid grid-cols-3 gap-4 text-center">
+            <div>
+              <div className="text-2xl font-bold text-primary">15+</div>
+              <div className="text-sm text-muted-foreground">Years Experience</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-primary">50,000+</div>
+              <div className="text-sm text-muted-foreground">Patients Treated</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-primary">20+</div>
+              <div className="text-sm text-muted-foreground">Specialties</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="relative">
+        <img 
+          src={hospitalExterior} 
+          alt="Hospital Exterior - Sravanthi Hospital Building" 
+          className="rounded-lg shadow-lg w-full"
+        />
+        {/* Optional: Add a small overlay or badge */}
+        <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2">
+          <div className="text-sm font-semibold">Sravanthi Hospital</div>
+          <div className="text-xs text-muted-foreground">Telugana</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Testimonials */}
       <section className="py-16">
@@ -247,10 +321,15 @@ const Home = () => {
               </Button>
             </Link>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="text-lg px-8 border-white text-white hover:bg-white hover:text-primary">
-                Contact Us
-              </Button>
-            </Link>
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-lg px-8 border-black text-black hover:bg-black hover:text-white"
+            >
+              Contact Us
+            </Button>
+          </Link>
+
           </div>
         </div>
       </section>

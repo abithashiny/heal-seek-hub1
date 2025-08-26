@@ -26,14 +26,17 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <div className="text-primary-foreground font-bold text-lg">S</div>
-            </div>
-            <div>
-              <div className="font-bold text-lg text-primary">Sravanthi Hospital</div>
-              <div className="text-xs text-muted-foreground">Healthcare Excellence</div>
-            </div>
-          </Link>
+          <img 
+            src="/logo.png" 
+            alt="Sravanthi Hospital Logo" 
+            className="h-10 w-10 object-contain" 
+          />
+          <div>
+            <div className="font-bold text-lg text-primary">Sravanthi Hospital</div>
+            <div className="text-xs text-muted-foreground">Healthcare Excellence</div>
+          </div>
+        </Link>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
