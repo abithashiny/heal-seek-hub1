@@ -7,25 +7,40 @@ const FindHospital = () => {
   const googleMapsLink = "https://maps.app.goo.gl/UVmdbZzcDmdy1xh58?g_st=aw";
 
   const transportOptions = [
-    {
-      icon: Car,
-      title: "By Car",
-      description: "Parking available on-site",
-      time: "15-20 minutes from city center"
-    },
-    {
-      icon: Bus,
-      title: "By Bus",
-      description: "Bus stop 200m away",
-      time: "Route 45, 67 directly to hospital"
-    },
-    {
-      icon: Train,
-      title: "By Metro",
-      description: "Nearest metro: Sainikpuri",
-      time: "5 minutes walk from station"
-    }
-  ];
+  {
+    icon: Car,
+    title: "By Car",
+    description: "Parking available on-site",
+    time: "15-20 minutes from city center"
+  },
+  {
+    icon: Bus,
+    title: "By Bus",
+    description: "Bus stop 200m away",
+    time: "Route 45, 67 directly to hospital"
+  },
+  {
+    icon: Train,
+    title: "By Metro",
+    description: "Nearest metro: Sainikpuri",
+    time: "Currently not available",
+    alternatives: [
+      {
+        icon: Car,
+        title: "Alternative: Car",
+        description: "Parking available on-site",
+        time: "15-20 minutes from city center"
+      },
+      {
+        icon: Bus,
+        title: "Alternative: Bus",
+        description: "Bus stop 200m away",
+        time: "Route 45, 67 directly to hospital"
+      }
+    ]
+  }
+];
+
 
   const landmarks = [
     "Near Saptagiri Colony Main Road",
@@ -155,27 +170,45 @@ const FindHospital = () => {
           </div>
 
           {/* Transportation Options */}
-          <div className="mt-12">
-            <h2 className="text-3xl font-bold text-center mb-8">How to Reach Us</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {transportOptions.map((option, index) => (
-                <Card key={index} className="medical-card border-0 text-center">
-                  <CardHeader>
-                    <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                      <option.icon className="h-8 w-8 text-primary-foreground" />
-                    </div>
-                    <CardTitle>{option.title}</CardTitle>
-                    <CardDescription>{option.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Badge variant="secondary" className="text-sm">
-                      {option.time}
-                    </Badge>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+          <div className="grid md:grid-cols-3 gap-6">
+  {transportOptions.map((option, index) => (
+    <Card key={index} className="medical-card border-0 text-center">
+      <CardHeader>
+        <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+          <option.icon className="h-8 w-8 text-primary-foreground" />
+        </div>
+        <CardTitle>{option.title}</CardTitle>
+        <CardDescription>{option.description}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Badge variant="secondary" className="text-sm">
+          {option.time}
+        </Badge>
+
+        {/* Render fallback options if available */}
+        {option.alternatives && (
+          <div className="mt-4 space-y-3 text-left">
+            <h4 className="font-semibold text-sm">Alternatives:</h4>
+            {option.alternatives.map((alt, idx) => (
+              <div
+                key={idx}
+                className="flex items-start gap-2 border-l-2 pl-3 border-muted-foreground/40"
+              >
+                <alt.icon className="h-4 w-4 text-primary mt-1" />
+                <div>
+                  <div className="font-medium">{alt.title}</div>
+                  <div className="text-muted-foreground text-sm">{alt.description}</div>
+                  <Badge variant="outline" className="text-xs mt-1">{alt.time}</Badge>
+                </div>
+              </div>
+            ))}
           </div>
+        )}
+      </CardContent>
+    </Card>
+  ))}
+</div>
+
 
           {/* Emergency Contact */}
           <Card className="mt-12 medical-hero text-primary-foreground border-0">
