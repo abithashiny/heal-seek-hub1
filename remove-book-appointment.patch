@@ -1,0 +1,169 @@
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -5,7 +5,6 @@
+ import { BrowserRouter, Routes, Route } from "react-router-dom";
+ import Navigation from "./components/Navigation";
+ import Home from "./pages/Home";
+-import BookAppointment from "./pages/BookAppointment";
+ import FindHospital from "./pages/FindHospital";
+ import Specialties from "./pages/Specialties";
+ import Doctors from "./pages/Doctors";
+@@ -23,7 +22,6 @@
+         <Navigation />
+         <Routes>
+           <Route path="/" element={<Home />} />
+-          <Route path="/book-appointment" element={<BookAppointment />} />
+           <Route path="/find-hospital" element={<FindHospital />} />
+           <Route path="/specialties" element={<Specialties />} />
+           <Route path="/doctors" element={<Doctors />} />
+--- a/src/components/Navigation.tsx
++++ b/src/components/Navigation.tsx
+@@ -11,8 +11,7 @@
+ 
+   const navItems = [
+     { name: "Home", path: "/" },
+-    { name: "Book Appointment", path: "/book-appointment" },
+-    { name: "Find Hospital", path: "/find-hospital" },
++        { name: "Find Hospital", path: "/find-hospital" },
+     { name: "Specialties", path: "/specialties" },
+     { name: "Doctors", path: "/doctors" },
+     { name: "Contact", path: "/contact" },
+--- a/src/pages/Home.tsx
++++ b/src/pages/Home.tsx
+@@ -92,14 +92,7 @@
+               Delivering World-Class Healthcare in Hyderabad, Telangana
+             </p>
+             <div className="flex flex-col sm:flex-row gap-4">
+-            <Link to="/book-appointment">
+-              <Button size="lg" variant="secondary" className="text-lg px-8 py-3">
+-                Book Appointment
+-                <ChevronRight className="ml-2 h-5 w-5" />
+-              </Button>
+-            </Link>
+-
+-            <Link to="/find-hospital">
++<Link to="/find-hospital">
+               <Button
+                 size="lg"
+                 variant="outline"
+@@ -315,12 +308,7 @@
+             Book your appointment today and experience world-class healthcare
+           </p>
+           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+-            <Link to="/book-appointment">
+-              <Button size="lg" variant="secondary" className="text-lg px-8">
+-                Book Appointment Now
+-              </Button>
+-            </Link>
+-            <Link to="/contact">
++<Link to="/contact">
+             <Button
+               size="lg"
+               variant="outline"
+--- a/src/pages/Doctors.tsx
++++ b/src/pages/Doctors.tsx
+@@ -62,11 +62,6 @@
+     { name: "Laparoscopy & General Surgery", count: 1 }
+   ];
+ 
+-  const handleBookAppointment = () => {
+-    // This would typically navigate to booking page
+-    alert("Redirecting to book appointment page...");
+-  };
+-
+   const handleCall = () => {
+     // This would typically initiate a call
+     alert("Calling hospital...");
+@@ -190,10 +185,6 @@
+ 
+                 {/* Action Buttons */}
+                 <div className="flex gap-3 pt-2">
+-                  <Button className="flex-1 bg-blue-600 hover:bg-blue-700" onClick={handleBookAppointment}>
+-                    Book Appointment
+-                    <ChevronRight className="ml-2 h-4 w-4" />
+-                  </Button>
+                   <Button variant="outline" className="flex-1 border-slate-200 text-slate-700 hover:bg-slate-50" onClick={handleCall}>
+                     <Phone className="mr-2 h-4 w-4" />
+                     Call
+--- a/src/pages/Specialties.tsx
++++ b/src/pages/Specialties.tsx
+@@ -83,10 +83,6 @@
+     }
+   ];
+ 
+-  const handleBookAppointment = () => {
+-    alert("Redirecting to book appointment page...");
+-  };
+-
+   const handleViewDoctors = () => {
+     alert("Redirecting to doctors page...");
+   };
+@@ -206,10 +202,6 @@
+                   </div>
+ 
+                   <div className="flex gap-2">
+-                    <Button className="flex-1 bg-blue-600 hover:bg-blue-700 text-sm" onClick={handleBookAppointment}>
+-                      Book Now
+-                      <ChevronRight className="ml-1 h-3 w-3" />
+-                    </Button>
+                     <Button variant="outline" className="flex-1 border-slate-200 text-slate-700 hover:bg-slate-50 text-sm" onClick={handleViewDoctors}>
+                       View Doctors
+                     </Button>
+@@ -285,10 +277,6 @@
+                   </div>
+ 
+                   <div className="flex gap-2">
+-                    <Button className="flex-1 bg-blue-600 hover:bg-blue-700 text-sm" onClick={handleBookAppointment}>
+-                      Book Now
+-                      <ChevronRight className="ml-1 h-3 w-3" />
+-                    </Button>
+                     <Button variant="outline" className="flex-1 border-slate-200 text-slate-700 hover:bg-slate-50 text-sm" onClick={handleViewDoctors}>
+                       View Doctors
+                     </Button>
+--- a/index.html
++++ b/index.html
+@@ -4,7 +4,7 @@
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Sravanthi Hospital - Healthcare Excellence in Telangana</title>
+-    <meta name="description" content="Sravanthi Hospital, Hyderabad - Trusted multispecialty healthcare in Gynecology, Orthopedics, Pediatrics, and more. Book appointments online." />
++    <meta name="description" content="Sravanthi Hospital, Hyderabad - Trusted multispecialty healthcare in Gynecology, Orthopedics, Pediatrics, and more." />
+     <meta name="keywords" content="Sravanthi Hospital, Hyderabad, multispecialty hospital, gynecology, orthopedics, pediatrics, healthcare Telangana" />
+     <meta name="author" content="Sravanthi Hospital" />
+ 
+--- a/src/pages/Home.tsx
++++ b/src/pages/Home.tsx
+@@ -92,14 +92,7 @@
+               Delivering World-Class Healthcare in Hyderabad, Telangana
+             </p>
+             <div className="flex flex-col sm:flex-row gap-4">
+-            <Link to="/book-appointment">
+-              <Button size="lg" variant="secondary" className="text-lg px-8 py-3">
+-                Book Appointment
+-                <ChevronRight className="ml-2 h-5 w-5" />
+-              </Button>
+-            </Link>
+-
+-            <Link to="/find-hospital">
++<Link to="/find-hospital">
+               <Button
+                 size="lg"
+                 variant="outline"
+@@ -312,15 +305,9 @@
+         <div className="container mx-auto px-4 text-center">
+           <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
+           <p className="text-xl mb-8 max-w-2xl mx-auto">
+-            Book your appointment today and experience world-class healthcare
+-          </p>
++                      </p>
+           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+-            <Link to="/book-appointment">
+-              <Button size="lg" variant="secondary" className="text-lg px-8">
+-                Book Appointment Now
+-              </Button>
+-            </Link>
+-            <Link to="/contact">
++<Link to="/contact">
+             <Button
+               size="lg"
+               variant="outline"

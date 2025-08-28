@@ -206,10 +206,6 @@ const Specialties = () => {
                   </div>
 
                   <div className="flex gap-2">
-                    <Button className="flex-1 bg-blue-600 hover:bg-blue-700 text-sm" onClick={handleBookAppointment}>
-                      Book Now
-                      <ChevronRight className="ml-1 h-3 w-3" />
-                    </Button>
                     <Button variant="outline" className="flex-1 border-slate-200 text-slate-700 hover:bg-slate-50 text-sm" onClick={handleViewDoctors}>
                       View Doctors
                     </Button>
@@ -285,10 +281,6 @@ const Specialties = () => {
                   </div>
 
                   <div className="flex gap-2">
-                    <Button className="flex-1 bg-blue-600 hover:bg-blue-700 text-sm" onClick={handleBookAppointment}>
-                      Book Now
-                      <ChevronRight className="ml-1 h-3 w-3" />
-                    </Button>
                     <Button variant="outline" className="flex-1 border-slate-200 text-slate-700 hover:bg-slate-50 text-sm" onClick={handleViewDoctors}>
                       View Doctors
                     </Button>
@@ -309,14 +301,6 @@ const Specialties = () => {
               for personalized treatment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                variant="secondary" 
-                size="lg" 
-                className="text-lg px-8 bg-white text-blue-600 hover:bg-slate-100"
-                onClick={handleBookAppointment}
-              >
-                Book Appointment
-              </Button>
               <Button 
               variant="outline" 
               size="lg" 

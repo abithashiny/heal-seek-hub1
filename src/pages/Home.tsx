@@ -92,12 +92,6 @@ const Home = () => {
               Delivering World-Class Healthcare in Hyderabad, Telangana
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/book-appointment">
-              <Button size="lg" variant="secondary" className="text-lg px-8 py-3">
-                Book Appointment
-                <ChevronRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
 
             <Link to="/find-hospital">
               <Button
@@ -315,11 +309,6 @@ const Home = () => {
             Book your appointment today and experience world-class healthcare
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/book-appointment">
-              <Button size="lg" variant="secondary" className="text-lg px-8">
-                Book Appointment Now
-              </Button>
-            </Link>
             <Link to="/contact">
             <Button
               size="lg"

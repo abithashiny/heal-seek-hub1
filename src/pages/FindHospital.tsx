@@ -100,9 +100,11 @@ const FindHospital = () => {
                     <div>
                       <div className="font-semibold text-lg">Sravanthi Hospital</div>
                       <div className="text-muted-foreground">
-                        Plot No 12, Saptagiri Colony<br />
-                        Sainikpuri, Hyderabad - 500056<br />
-                        Telangana, India
+                        Sravanthi Hospital <br />
+
+                        Area: Vidyanagar, Suryapet<br />
+
+                        Pincode: 508213 (Telangana, India)
                       </div>
                     </div>
                     

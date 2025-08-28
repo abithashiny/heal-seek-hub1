@@ -190,10 +190,6 @@ const Doctors = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 pt-2">
-                  <Button className="flex-1 bg-blue-600 hover:bg-blue-700" onClick={handleBookAppointment}>
-                    Book Appointment
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  </Button>
                   <Button variant="outline" className="flex-1 border-slate-200 text-slate-700 hover:bg-slate-50" onClick={handleCall}>
                     <Phone className="mr-2 h-4 w-4" />
                     Call
@@ -213,14 +209,7 @@ const Doctors = () => {
               Book an appointment with the specialist that matches your healthcare needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                variant="secondary" 
-                size="lg" 
-                className="text-lg px-8 bg-white text-blue-600 hover:bg-slate-100"
-                onClick={handleBookAppointment}
-              >
-                Book Appointment Now
-              </Button>
+              
               <Button 
                 variant="outline" 
                 size="lg" 
