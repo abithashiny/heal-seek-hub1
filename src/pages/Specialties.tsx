@@ -1,6 +1,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
+
 import { 
   Heart, 
   Baby, 
@@ -91,9 +93,12 @@ const Specialties = () => {
     alert("Redirecting to doctors page...");
   };
 
-  const handleContact = () => {
-    alert("Redirecting to contact page...");
-  };
+ const navigate = useNavigate();
+
+const handleContact = () => {
+  navigate("/contact");  // this assumes your route is set as /contact → contact.tsx
+};
+
 
   return (
     <div className="min-h-screen bg-slate-50 py-8">
@@ -101,9 +106,10 @@ const Specialties = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 text-slate-800">Our Medical Specialties</h1>
-          <h2 className="text-2xl font-semibold text-blue-600 mb-4">
+          <h2 className="text-2xl font-semibold mb-4" style={{ color: "#6B8E23" }}>
             Fertility, Maternity, Laser & Laparoscopy Surgery Center
           </h2>
+
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Comprehensive specialized healthcare services with state-of-the-art equipment 
             and experienced medical professionals dedicated to women's health and advanced surgical care
@@ -292,27 +298,27 @@ const Specialties = () => {
         </div>
 
         {/* CTA Section */}
-        <Card className="mt-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white border-0">
-          <CardContent className="p-12 text-center">
-            <h2 className="text-3xl font-bold mb-4">Need Specialized Medical Care?</h2>
-            <p className="text-lg mb-8 max-w-2xl mx-auto">
-              Our experienced specialists are ready to provide you with the best medical care 
-              in fertility, maternity, laser and laparoscopic surgery. Book an appointment today 
-              for personalized treatment.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-              variant="outline" 
-              size="lg" 
-              className="text-lg px-8 border-black text-black hover:bg-black hover:text-white hover:border-blue-600 hover:text-blue-600"
-              onClick={handleContact}
-            >
-              Contact Us
-            </Button>
-
-            </div>
-          </CardContent>
-        </Card>
+        {/* CTA Section */}
+          <Card className="mt-16 bg-gradient-to-r from-[hsl(85,35%,35%)] to-[hsl(85,35%,25%)] text-white border-0">
+            <CardContent className="p-12 text-center">
+              <h2 className="text-3xl font-bold mb-4">Need Specialized Medical Care?</h2>
+              <p className="text-lg mb-8 max-w-2xl mx-auto">
+                Our experienced specialists are ready to provide you with the best medical care 
+                in fertility, maternity, laser and laparoscopic surgery. Book an appointment today 
+                for personalized treatment.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                variant="outline" 
+                size="lg" 
+                className="text-lg px-8 border-[hsl(var(--primary))] text-[hsl(var(--primary))] hover:bg-[hsl(var(--primary))] hover:text-white hover:border-[hsl(var(--primary-dark))] transition-all duration-300"
+                onClick={handleContact}
+              >
+                Contact Us
+              </Button>
+              </div>
+            </CardContent>
+          </Card>
       </div>
     </div>
   );

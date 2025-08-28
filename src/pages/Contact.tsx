@@ -294,7 +294,7 @@ const Contact = () => {
           <CardContent className="p-0">
             <div className="relative">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.7983654128967!2d78.50616737501936!3d17.498515383441676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99a3f5e68df9%3A0x8c8e2c4b0c5b9a1e!2sSaptagiri%20Colony%2C%20Sainikpuri%2C%20Secunderabad%2C%20Telangana%20500094!5e0!3m2!1sen!2sin!4v1699000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3812.452191644138!2d79.6236377!3d17.148200700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a34db00585b6c1b%3A0x5ed038b73f159324!2sSravanthi%20Hospital!5e0!3m2!1sen!2sin!4v1756374812714!5m2!1sen!2sin"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
@@ -303,6 +303,7 @@ const Contact = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Sravanthi Hospital Location"
               />
+
             </div>
           </CardContent>
         </Card>

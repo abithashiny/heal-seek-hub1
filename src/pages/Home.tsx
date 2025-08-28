@@ -71,53 +71,55 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section 
-        className="medical-hero text-primary-foreground relative overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(rgba(33, 94, 167, 0.85), rgba(33, 94, 167, 0.85)), url(${hospitalExterior})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          minHeight: '600px'
-        }}
+      {/* Hero Section */}
+<section 
+  className="medical-hero text-primary-foreground relative overflow-hidden"
+  style={{
+    backgroundImage: `linear-gradient(rgba(85, 86, 59, 0.85), rgba(85, 86, 59, 0.85)), url(${hospitalExterior})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    minHeight: '600px'
+  }}
+>
+  <div className="container mx-auto px-4 py-24 relative z-10">
+    <div className="max-w-3xl animate-fadeInUp">
+      <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
+        Trusted Healthcare Since 2010
+      </Badge>
+      <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+        Sravanthi Hospital
+      </h1>
+      <p className="text-xl md:text-2xl mb-8 leading-relaxed">
+        Delivering World-Class Healthcare in Hyderabad, Telangana
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4">
+
+      
+       
+      <Link to="/find-hospital">
+      <Button
+        size="lg"
+        variant="outline"
+        className="text-lg px-8 py-3 border-white text-black hover:bg-[hsl(85,35%,95%)] hover:text-black"
       >
-        <div className="container mx-auto px-4 py-24 relative z-10">
-          <div className="max-w-3xl animate-fadeInUp">
-            <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
-              Trusted Healthcare Since 2010
-            </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Sravanthi Hospital
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-              Delivering World-Class Healthcare in Hyderabad, Telangana
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+        Find Hospital
+        <MapPin className="ml-2 h-5 w-5" />
+      </Button>
+    </Link>
 
-            <Link to="/find-hospital">
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-lg px-8 py-3 border-black text-black hover:bg-black hover:text-white"
-              >
-                Find Hospital
-                <MapPin className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
+    <Button
+      size="lg"
+      variant="outline"
+      className="text-lg px-8 py-3 border-white text-black hover:bg-[hsl(85,35%,95%)] hover:text-black"
+    >
+      <Phone className="mr-2 h-5 w-5" />
+      Call Emergency
+    </Button>
+    </div>
 
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 py-3 border-black text-black hover:bg-black hover:text-white"
-            >
-              <Phone className="mr-2 h-5 w-5" />
-              Call Emergency
-            </Button>
-          </div>
-
-          </div>
-        </div>
-      </section>
-
+    </div>
+  </div>
+</section>
       {/* Quick Stats */}
       <section className="py-16 bg-secondary/50">
         <div className="container mx-auto px-4">

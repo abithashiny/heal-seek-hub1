@@ -24,17 +24,15 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          {/* Logo */}
+        <Link to="/" className="flex items-center">
           <img 
-            src="/logo.png" 
+            src="logo1.png"   // replace with your combined logo file
             alt="Sravanthi Hospital Logo" 
-            className="h-10 w-10 object-contain" 
+            className="h-14 object-contain" // adjust height/width as needed
           />
-          <div>
-            <div className="font-bold text-lg text-primary">Sravanthi Hospital</div>
-            <div className="text-xs text-muted-foreground">Healthcare Excellence</div>
-          </div>
         </Link>
+
 
 
           {/* Desktop Navigation */}
@@ -43,7 +41,7 @@ const Navigation = () => {
               <Link key={item.path} to={item.path}>
                 <Button
                   variant={isActivePage(item.path) ? "default" : "ghost"}
-                  className="text-sm"
+                  className={`text-sm ${isActivePage(item.path) ? 'bg-[hsl(85,35%,35%)] text-white hover:bg-[hsl(85,35%,25%)]' : 'hover:bg-[hsl(85,35%,95%)] hover:text-[hsl(85,35%,35%)]'}`}
                 >
                   {item.name}
                 </Button>
@@ -57,7 +55,7 @@ const Navigation = () => {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder="Search doctors, specialties..."
-                className="pl-10 w-64"
+                className="pl-10 w-64 border-[hsl(85,35%,88%)] focus:ring-[hsl(85,35%,35%)] focus:border-[hsl(85,35%,35%)]"
               />
             </div>
             <Button variant="destructive" size="sm" className="flex items-center gap-2">
@@ -69,7 +67,7 @@ const Navigation = () => {
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="hover:bg-[hsl(85,35%,95%)] hover:text-[hsl(85,35%,35%)]">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
@@ -83,14 +81,14 @@ const Navigation = () => {
                   >
                     <Button
                       variant={isActivePage(item.path) ? "default" : "ghost"}
-                      className="w-full justify-start"
+                      className={`w-full justify-start ${isActivePage(item.path) ? 'bg-[hsl(85,35%,35%)] text-white hover:bg-[hsl(85,35%,25%)]' : 'hover:bg-[hsl(85,35%,95%)] hover:text-[hsl(85,35%,35%)]'}`}
                     >
                       {item.name}
                     </Button>
                   </Link>
                 ))}
                 <div className="pt-4 border-t">
-                  <Input placeholder="Search..." className="mb-3" />
+                  <Input placeholder="Search..." className="mb-3 border-[hsl(85,35%,88%)] focus:ring-[hsl(85,35%,35%)] focus:border-[hsl(85,35%,35%)]" />
                   <Button variant="destructive" className="w-full">
                     <Phone className="mr-2 h-4 w-4" />
                     Emergency Call
