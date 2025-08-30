@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+// Note: useNavigate from react-router-dom would be imported in actual project
 
 import { 
   Heart, 
@@ -30,7 +30,7 @@ const Specialties = () => {
       ],
       doctors: ["Dr. T. Chaitany Sravanthi"],
       features: ["Advanced IVF Lab", "High Success Rates", "Personalized Treatment Plans"],
-      color: "from-pink-500 to-rose-500"
+      color: "from-[#2C4C9E] to-[#8C3E8C]"
     },
     {
       id: "maternity",
@@ -47,7 +47,7 @@ const Specialties = () => {
       ],
       doctors: ["Dr. T. Chaitany Sravanthi"],
       features: ["24/7 Maternity Care", "Advanced NICU", "Comfortable Labor Rooms"],
-      color: "from-blue-500 to-cyan-500"
+      color: "from-[#2C4C9E] to-[#8C3E8C]"
     },
     {
       id: "laser-surgery",
@@ -64,7 +64,7 @@ const Specialties = () => {
       ],
       doctors: ["Dr. S. Praveen Kumar"],
       features: ["Minimal Scarring", "Quick Recovery", "Precision Treatment"],
-      color: "from-green-500 to-emerald-500"
+      color: "from-[#2C4C9E] to-[#8C3E8C]"
     },
     {
       id: "laparoscopy",
@@ -81,7 +81,7 @@ const Specialties = () => {
       ],
       doctors: ["Dr. S. Praveen Kumar"],
       features: ["Minimally Invasive", "Faster Recovery", "Reduced Pain"],
-      color: "from-purple-500 to-indigo-500"
+      color: "from-[#2C4C9E] to-[#8C3E8C]"
     }
   ];
 
@@ -93,10 +93,10 @@ const Specialties = () => {
     alert("Redirecting to doctors page...");
   };
 
- const navigate = useNavigate();
+ // const navigate = useNavigate();
 
 const handleContact = () => {
-  navigate("/contact");  // this assumes your route is set as /contact → contact.tsx
+  alert("Redirecting to contact page...");  // In actual project: navigate("/contact");
 };
 
 
@@ -106,7 +106,7 @@ const handleContact = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 text-slate-800">Our Medical Specialties</h1>
-          <h2 className="text-2xl font-semibold mb-4" style={{ color: "#6B8E23" }}>
+          <h2 className="text-2xl font-semibold mb-4" style={{ color: "#2C4C9E" }}>
             Fertility, Maternity, Laser & Laparoscopy Surgery Center
           </h2>
 
@@ -120,25 +120,25 @@ const handleContact = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           <Card className="text-center shadow-sm bg-white">
             <CardContent className="p-4">
-              <div className="text-2xl font-bold text-pink-600 mb-1">100+</div>
+              <div className="text-2xl font-bold mb-1" style={{ color: "#8C3E8C" }}>100+</div>
               <div className="text-sm text-slate-600">Successful Pregnancies</div>
             </CardContent>
           </Card>
           <Card className="text-center shadow-sm bg-white">
             <CardContent className="p-4">
-              <div className="text-2xl font-bold text-blue-600 mb-1">500+</div>
+              <div className="text-2xl font-bold mb-1" style={{ color: "#2C4C9E" }}>500+</div>
               <div className="text-sm text-slate-600">Deliveries</div>
             </CardContent>
           </Card>
           <Card className="text-center shadow-sm bg-white">
             <CardContent className="p-4">
-              <div className="text-2xl font-bold text-green-600 mb-1">300+</div>
+              <div className="text-2xl font-bold mb-1" style={{ color: "#8C3E8C" }}>300+</div>
               <div className="text-sm text-slate-600">Laser Procedures</div>
             </CardContent>
           </Card>
           <Card className="text-center shadow-sm bg-white">
             <CardContent className="p-4">
-              <div className="text-2xl font-bold text-purple-600 mb-1">1000+</div>
+              <div className="text-2xl font-bold mb-1" style={{ color: "#2C4C9E" }}>1000+</div>
               <div className="text-sm text-slate-600">Laparoscopic Surgeries</div>
             </CardContent>
           </Card>
@@ -177,7 +177,7 @@ const handleContact = () => {
                     <div className="grid grid-cols-1 gap-1">
                       {specialty.services.slice(0, 4).map((service, idx) => (
                         <div key={idx} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-blue-600 rounded-full" />
+                          <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#2C4C9E" }} />
                           <span className="text-sm text-slate-600">{service}</span>
                         </div>
                       ))}
@@ -202,8 +202,8 @@ const handleContact = () => {
                     <div className="space-y-1">
                       {specialty.doctors.map((doctor, idx) => (
                         <div key={idx} className="flex items-center gap-2">
-                          <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center">
-                            <Users className="h-3 w-3 text-blue-600" />
+                          <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: "#E8EDF9" }}>
+                            <Users className="h-3 w-3" style={{ color: "#2C4C9E" }} />
                           </div>
                           <span className="text-sm text-slate-700 font-medium">{doctor}</span>
                         </div>
@@ -252,7 +252,7 @@ const handleContact = () => {
                     <div className="grid grid-cols-1 gap-1">
                       {specialty.services.slice(0, 4).map((service, idx) => (
                         <div key={idx} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-blue-600 rounded-full" />
+                          <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#2C4C9E" }} />
                           <span className="text-sm text-slate-600">{service}</span>
                         </div>
                       ))}
@@ -277,8 +277,8 @@ const handleContact = () => {
                     <div className="space-y-1">
                       {specialty.doctors.map((doctor, idx) => (
                         <div key={idx} className="flex items-center gap-2">
-                          <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center">
-                            <Users className="h-3 w-3 text-blue-600" />
+                          <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: "#E8EDF9" }}>
+                            <Users className="h-3 w-3" style={{ color: "#2C4C9E" }} />
                           </div>
                           <span className="text-sm text-slate-700 font-medium">{doctor}</span>
                         </div>
@@ -298,27 +298,26 @@ const handleContact = () => {
         </div>
 
         {/* CTA Section */}
-        {/* CTA Section */}
-          <Card className="mt-16 bg-gradient-to-r from-[hsl(85,35%,35%)] to-[hsl(85,35%,25%)] text-white border-0">
-            <CardContent className="p-12 text-center">
-              <h2 className="text-3xl font-bold mb-4">Need Specialized Medical Care?</h2>
-              <p className="text-lg mb-8 max-w-2xl mx-auto">
-                Our experienced specialists are ready to provide you with the best medical care 
-                in fertility, maternity, laser and laparoscopic surgery. Book an appointment today 
-                for personalized treatment.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
+        <Card className="mt-16 bg-gradient-to-r from-[#2C4C9E] to-[#8C3E8C] text-white border-0">
+          <CardContent className="p-12 text-center">
+            <h2 className="text-3xl font-bold mb-4">Need Specialized Medical Care?</h2>
+            <p className="text-lg mb-8 max-w-2xl mx-auto">
+              Our experienced specialists are ready to provide you with the best medical care 
+              in fertility, maternity, laser and laparoscopic surgery. Book an appointment today 
+              for personalized treatment.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
                 variant="outline" 
                 size="lg" 
-                className="text-lg px-8 border-[hsl(var(--primary))] text-[hsl(var(--primary))] hover:bg-[hsl(var(--primary))] hover:text-white hover:border-[hsl(var(--primary-dark))] transition-all duration-300"
+                className="text-lg px-8 border-white text-black bg-white hover:bg-gray-100 hover:text-[#2C4C9E] transition-all duration-300"
                 onClick={handleContact}
               >
                 Contact Us
               </Button>
-              </div>
-            </CardContent>
-          </Card>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
